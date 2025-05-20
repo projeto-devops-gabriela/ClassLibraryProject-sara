@@ -11,12 +11,8 @@ permissions:
 
 jobs:
   use-reusable-workflow:
-    uses: sarafogo/pipeline_templates/.github/workflows/build.yml@main
+    uses: projeto-devops-gabriela/esteiras-devops/.github/workflows/esteira-teste-conexao.yaml@main
     with:
-      enableSonar: 'true'
-    secrets: inherit
-
-  deploy:
-    needs: use-reusable-workflow
-    uses: sarafogo/pipeline_templates/.github/workflows/deploy-lib.yml@main
+       project-type: 'ClassLibrary'
+       build-configuration: Release
     secrets: inherit
